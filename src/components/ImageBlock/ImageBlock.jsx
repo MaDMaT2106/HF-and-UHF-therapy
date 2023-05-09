@@ -5,6 +5,11 @@ import LanguageContext from '../../providers/LanguageContext';
 import TypeContext from '../../providers/TypeContext';
 import TimeContext from '../../providers/TimeContext';
 
+import elec from '../../../public/media/електричне-поле.gif';
+import elecAnim from '../../../public/media/електричне-поле-анімований.gif';
+import magnet from '../../../public/media/магнітне-поле.gif';
+import magnetAnim from '../../../public/media/магнітне-поле-анімований.gif';
+
 const ImageBlock = () => {
   const { isEnglish } = useContext(LanguageContext);
   const { isElectric, tableIsShown, setTableIsShown } = useContext(TypeContext);
@@ -28,25 +33,11 @@ const ImageBlock = () => {
       >
         <div>
           {isElectric && (
-            <img
-              className="image"
-              src={`../../../public/media/${
-                !tableIsShown
-                  ? 'електричне-поле.gif'
-                  : 'електричне-поле-анімований.gif'
-              }`}
-            />
+            <img className="image" src={!tableIsShown ? elec : elecAnim} />
           )}
 
           {!isElectric && (
-            <img
-              className="image"
-              src={`../../../public/media/${
-                !tableIsShown
-                  ? 'магнітне-поле.gif'
-                  : 'магнітне-поле-анімований.gif'
-              }`}
-            />
+            <img className="image" src={!tableIsShown ? magnet : magnetAnim} />
           )}
           <div className="under-image-text">
             <span>{isEnglish ? 'Glycerol' : 'Гліцерин'}</span>
