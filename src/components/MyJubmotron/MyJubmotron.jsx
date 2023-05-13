@@ -33,53 +33,20 @@ const MyJumbotron = () => {
   };
 
   return (
-    <div>
+    <div className="my-jumbotron">
       <Container>
         <MyModal show={isOpen} handleClose={setOpen} />
-        <div className="header__language">
-          <div className="lg">
-            <p>Українська</p>
-          </div>
-          <div className="form-check form-switch">
-            <input
-              id="switch-lang"
-              className="form-check-input"
-              type="checkbox"
-              role="switch"
-              onClick={() => setEnglish(!isEnglish)}
-            />
-          </div>
-          <div className="lg">
-            <p>English</p>
-          </div>
-        </div>
-        <img
-          style={{
-            float: 'left',
-            margin: '0 20px 20px 0',
-            height: '200px',
-            borderRadius: '5px',
-            padding: '5px',
-            fontSize: '20px',
-          }}
-          src="./media/pic.png"
-        />
         <Button
-          variant="outline-secondary"
+          className="info-button"
+          variant="secondary"
           size="lg"
           data-bs-toggle="modal"
           data-bs-target="#myModal"
           onClick={() => setOpen(true)}
         >
-          Info
+          {isEnglish ? 'Info' : 'Довідка'}
         </Button>
-        <h2 className="display-4">
-          <span>
-            {isEnglish
-              ? 'STUDY OF DEVICES AND METHODS OF HF AND UHF THERAPY'
-              : 'ВИВЧЕННЯ АПАРАТІВ І МЕТОДІВ УВЧ-ТЕРАПІЇ ЕЛЕКТРИЧНИМ І МАГНІТНИМ ПОЛЯМИ ТА ВЧ-СТРУМОМ'}
-          </span>
-        </h2>
+
         <div className="d-flex gap-3">
           <Button
             onClick={() => {
@@ -91,7 +58,7 @@ const MyJumbotron = () => {
           >
             <h3>
               <span>
-                {isEnglish ? 'Electric UHF field' : 'Електричне поле УВЧ'}{' '}
+                {isEnglish ? 'Electric UHF field' : 'Електричне поле УВЧ'}
                 <br /> 30 Вт
               </span>
             </h3>
@@ -106,7 +73,7 @@ const MyJumbotron = () => {
           >
             <h3>
               <span>
-                {isEnglish ? 'Magnetic UHF field' : 'Магнітне поле УВЧ'} <br />{' '}
+                {isEnglish ? 'Magnetic UHF field' : 'Магнітне поле УВЧ'} <br />
                 15 Вт
               </span>
             </h3>

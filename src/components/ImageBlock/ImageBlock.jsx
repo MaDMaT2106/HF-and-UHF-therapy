@@ -10,6 +10,8 @@ import elecAnim from '../../../public/media/електричне-поле-ані
 import magnet from '../../../public/media/магнітне-поле.gif';
 import magnetAnim from '../../../public/media/магнітне-поле-анімований.gif';
 
+import './ImageBlock.css';
+
 const ImageBlock = () => {
   const { isEnglish } = useContext(LanguageContext);
   const { isElectric, tableIsShown, setTableIsShown } = useContext(TypeContext);
@@ -55,7 +57,7 @@ const ImageBlock = () => {
           }}
         >
           <button
-            className="btn btn-success btn-lg"
+            className="btn btn-success btn-lg start-btn"
             disabled={tableIsShown}
             onClick={() => {
               setTableIsShown(true);
@@ -64,7 +66,7 @@ const ImageBlock = () => {
             variant="success"
             id="start"
           >
-            <span>{isEnglish ? 'Start' : 'Старт'}</span>
+            {isEnglish ? 'Start' : 'Старт'}
           </button>
 
           <div className="timer">

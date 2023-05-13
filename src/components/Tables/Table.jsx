@@ -5,14 +5,14 @@ import TemperatureContext from '../../providers/TemperatureContext';
 import TimeContext from '../../providers/TimeContext';
 import { electricTable, magneticTable } from '../../values/values.js';
 
+import './Table.css';
+
 export default function Table() {
   const { isElectric, tableIsShown } = useContext(TypeContext);
   const { isEnglish } = useContext(LanguageContext);
   const { setGlTemp, setNaclTemp } = useContext(TemperatureContext);
-  const { currentIndex, setCurrentIndex, intervalId, setIntervalId } =
+  const { currentIndex, setCurrentIndex, setIntervalId } =
     useContext(TimeContext);
-  const { isRunning, setIsRunning } = useState(false);
-  const { lastShownIndex, setLastShownIndex } = useState(0);
 
   useEffect(() => {
     let id;
@@ -34,7 +34,10 @@ export default function Table() {
   const tableToShow = isElectric ? electricTable : magneticTable;
 
   return (
-    <div style={tableIsShown ? { display: 'block' } : { display: 'none' }}>
+    <div
+      style={tableIsShown ? { display: 'block' } : { display: 'none' }}
+      className="table"
+    >
       <h3>
         {isElectric && (
           <span>
@@ -52,14 +55,14 @@ export default function Table() {
               t, <span>{isEnglish ? 'min' : 'хв'}</span>
             </th>
             <th scope="col">
-              T -{' '}
+              T -
               <span>
                 {isEnglish ? 'dielectric (glycerol)' : 'діелектрик (гліцерин)'}
               </span>
               , °C
             </th>
             <th scope="col">
-              T -{' '}
+              T -
               <span>
                 {isEnglish
                   ? 'electrolyte (NaCl solution)'
@@ -77,9 +80,9 @@ export default function Table() {
             }
             return (
               <tr key={index}>
-                <td>{index}</td>
-                <td>{row.gl}</td>
-                <td>{row.nacl}</td>
+                <td><span>{index}</span></td>
+                <td><span>{row.gl}</span></td>
+                <td><span>{row.nacl}</span></td>
               </tr>
             );
           })}
