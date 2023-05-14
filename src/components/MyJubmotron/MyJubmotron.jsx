@@ -55,13 +55,10 @@ const MyJumbotron = () => {
             }}
             variant={active1 ? 'success' : 'outline-success'}
             // active={active1}
+            className="button"
           >
-            <h3>
-              <span>
-                {isEnglish ? 'Electric UHF field' : 'Електричне поле УВЧ'}
-                <br /> 30 Вт
-              </span>
-            </h3>
+            {isEnglish ? 'Electric UHF field' : 'Електричне поле УВЧ'}
+            <br /> 30 W
           </Button>
           <Button
             onClick={() => {
@@ -70,13 +67,10 @@ const MyJumbotron = () => {
             }}
             variant="outline-secondary"
             active={active2}
+            className="button"
           >
-            <h3>
-              <span>
-                {isEnglish ? 'Magnetic UHF field' : 'Магнітне поле УВЧ'} <br />
-                15 Вт
-              </span>
-            </h3>
+            {isEnglish ? 'Magnetic UHF field' : 'Магнітне поле УВЧ'} <br />
+            15 W
           </Button>
         </div>
       </Container>

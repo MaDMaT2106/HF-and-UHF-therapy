@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import Timer from 'react-timer-wrapper';
 import Timecode from 'react-timecode';
 import LanguageContext from '../../providers/LanguageContext';
@@ -15,13 +15,17 @@ import './ImageBlock.css';
 const ImageBlock = () => {
   const { isEnglish } = useContext(LanguageContext);
   const { isElectric, tableIsShown, setTableIsShown } = useContext(TypeContext);
-  const { time, setTime } = useContext(TimeContext);
+  const { time, setTime, finished, setFinished } = useContext(TimeContext);
 
   useEffect(() => {
     if (!tableIsShown) {
       setTime(0);
     }
   }, [time]);
+
+  const onFinish = () => {
+    setFinished(true);
+  };
 
   return (
     <div className="col-4">
@@ -35,11 +39,11 @@ const ImageBlock = () => {
       >
         <div>
           {isElectric && (
-            <img className="image" src={!tableIsShown ? elec : elecAnim} />
+            <img className="image" src={finished ? elec : elecAnim} />
           )}
 
           {!isElectric && (
-            <img className="image" src={!tableIsShown ? magnet : magnetAnim} />
+            <img className="image" src={finished ? magnet : magnetAnim} />
           )}
           <div className="under-image-text">
             <span>{isEnglish ? 'Glycerol' : 'Гліцерин'}</span>
@@ -62,6 +66,7 @@ const ImageBlock = () => {
             onClick={() => {
               setTableIsShown(true);
               setTime(0);
+              setFinished(false);
             }}
             variant="success"
             id="start"
@@ -75,6 +80,8 @@ const ImageBlock = () => {
               time={time}
               active={tableIsShown}
               duration={600000}
+              // duration={10000}
+              onFinish={onFinish}
             >
               <Timecode format="H:?mm:ss" />
             </Timer>

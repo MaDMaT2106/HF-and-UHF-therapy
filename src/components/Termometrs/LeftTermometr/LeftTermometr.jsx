@@ -18,17 +18,6 @@ const LeftTermometr = () => {
           <div id="graduations1"></div>
         </div>
 
-        <div id="playground1">
-          <div id="range1" style={{ display: 'none' }}>
-            <input id="minTemp" type="text" value="-20" readOnly />
-            <input id="gl" type="range" min="-20" max="50" value="0" readOnly />
-            <input id="maxTemp" type="text" value="50" readOnly />
-          </div>
-          <p style={{ display: 'none' }} id="unit">
-            Celcius C°
-          </p>
-        </div>
-
         <h2 style={{ alignItems: 'center' }}>
           <span>{isEnglish ? 'DIELECTRIC' : 'ДІЕЛЕКТРИК'}</span>
           <br />

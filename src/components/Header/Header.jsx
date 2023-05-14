@@ -9,7 +9,7 @@ export default function Header() {
     <h1 className="display-4 header">
       {isEnglish
         ? 'STUDY OF DEVICES AND METHODS OF HF AND UHF THERAPY'
-        : 'ВИВЧЕННЯ АПАРАТІВ І МЕТОДІВ УВЧ-ТЕРАПІЇ ЕЛЕКТРИЧНИМ І МАГНІТНИМ ПОЛЯМИ ТА ВЧ-СТРУМОМ'}
+        : 'ВИВЧЕННЯ АПАРАТІВ І МЕТОДІВ ВЧ- ТА УВЧ-ТЕРАПІЇ'}
     </h1>
   );
 }

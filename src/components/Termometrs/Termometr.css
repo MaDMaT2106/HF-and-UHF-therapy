@@ -146,7 +146,7 @@
   z-index: 2;
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 1em;
+  font-size: 1.5em;
   line-height: 1;
   transform: translateY(50%);
   left: calc(100% + 1em / 1.5);
@@ -160,7 +160,7 @@
   z-index: 2;
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 1em;
+  font-size: 1.5em;
   line-height: 1;
   transform: translateY(50%);
   left: calc(100% + 1em / 1.5);
@@ -183,44 +183,6 @@
   border-right: 0.6666666667em solid rgba(0, 0, 0, 0.7);
   left: 100%;
   top: calc(-1em / 2.2 + 5px);
-}
-
-#playground1 #range1 input[type='text']:focus {
-  border-color: #3dcadf;
-  outline: none;
-}
-
-#playground2 #range2 input[type='text']:focus {
-  border-color: #3dcadf;
-  outline: none;
-}
-
-#playground1 #range1 input[type='text']:first-child {
-  text-align: right;
-}
-
-#playground2 #range2 input[type='text']:first-child {
-  text-align: right;
-}
-
-#playground1 #unit1 {
-  width: 100%;
-  margin: 0;
-  text-align: center;
-}
-
-#playground2 #unit2 {
-  width: 100%;
-  margin: 0;
-  text-align: center;
-}
-
-#playground1 #unit1:hover {
-  cursor: pointer;
-}
-
-#playground2 #unit2:hover {
-  cursor: pointer;
 }
 
 input[type='range'] {
@@ -367,36 +329,3 @@ input[type='range']:disabled::-ms-fill-upper {
   cursor: not-allowed;
 }
 
-#playground1,
-#playground2 {
-  font-size: 1.1em;
-}
-
-#playground1 #range1,
-#playground2 #range2 {
-  display: flex;
-}
-
-#playground1 #range1 input[type='text'] {
-  width: 2em;
-  background: transparent;
-  border: none;
-  color: inherit;
-  font: inherit;
-  margin: 0 5px;
-  padding: 0px 5px;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s ease-in-out;
-}
-
-#playground2 #range2 input[type='text'] {
-  width: 2em;
-  background: transparent;
-  border: none;
-  color: inherit;
-  font: inherit;
-  margin: 0 5px;
-  padding: 0px 5px;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s ease-in-out;
-}

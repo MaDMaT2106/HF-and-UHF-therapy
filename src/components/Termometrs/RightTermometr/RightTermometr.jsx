@@ -16,16 +16,7 @@ export default function RightTermometr() {
           ></div>
           <div id="graduations2"></div>
         </div>
-        <div id="playground">
-          <div id="range" style={{ display: 'none' }}>
-            <input id="minTemp2" type="text" value="0" readOnly />
-            <input id="nacl" type="range" min="0" max="50" value="0" readOnly />
-            <input id="maxTemp2" type="text" value="50" readOnly />
-          </div>
-          <p style={{ display: 'none' }} id="unit2">
-            Celcius C°
-          </p>
-        </div>
+
         <h2 style={{ alignItems: 'center' }}>
           <span>{isEnglish ? 'ELECTROLYTE' : 'ЕЛЕКТРОЛІТ'}</span>
           <br />
