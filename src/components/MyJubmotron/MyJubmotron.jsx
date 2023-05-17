@@ -5,16 +5,18 @@ import MyModal from '../Modal/Modal';
 import LanguageContext from '../../providers/LanguageContext';
 import TypeContext from '../../providers/TypeContext';
 import TemperatureContext from '../../providers/TemperatureContext';
+import TimeContext from '../../providers/TimeContext';
+
 import './MyJubmotron.css';
 
 const MyJumbotron = () => {
-  const { isEnglish, setEnglish } = useContext(LanguageContext);
+  const { isEnglish } = useContext(LanguageContext);
   const { setElectric, setTableIsShown } = useContext(TypeContext);
   const { setGlTemp, setNaclTemp } = useContext(TemperatureContext);
+  const { setFinished } = useContext(TimeContext);
   const [active1, setActive1] = useState(true);
   const [active2, setActive2] = useState(false);
   const [isOpen, setOpen] = useState(false);
-
   const handleActive = (num) => {
     if (num === 1) {
       setActive1(true);
@@ -30,6 +32,7 @@ const MyJumbotron = () => {
     setElectric(bool);
     setGlTemp(0);
     setNaclTemp(0);
+    setFinished(true);
   };
 
   return (
@@ -58,7 +61,7 @@ const MyJumbotron = () => {
             className="button"
           >
             {isEnglish ? 'Electric UHF field' : 'Електричне поле УВЧ'}
-            <br /> 30 W
+            <br /> {isEnglish ? '30 W' : '30 Вт'}
           </Button>
           <Button
             onClick={() => {
@@ -70,7 +73,7 @@ const MyJumbotron = () => {
             className="button"
           >
             {isEnglish ? 'Magnetic UHF field' : 'Магнітне поле УВЧ'} <br />
-            15 W
+            {isEnglish ? '15 W' : '15 Вт'}
           </Button>
         </div>
       </Container>
